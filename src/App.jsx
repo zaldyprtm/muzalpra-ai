@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <main className="flex flex-col min-h-[80vh] justify-center items-center max-w-xl w-full mx-auto rounded-md">
-        <h1 className="text-4xl font-bold text-indigo-500">REACT|GROQ</h1>
+        <h1 className="text-4xl font-bold text-indigo-500">MUZALPRA|AI</h1>
 
         {/* form */}
         <form className="flex flex-col gap-4 py-4 w-full">
