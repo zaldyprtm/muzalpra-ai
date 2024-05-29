@@ -13,12 +13,16 @@ const groq = new Groq({
 // Define the function to make a request to Groq AI
 export const requestToGroqAI = async (content) => {
   try {
+    // Add instruction to ensure the response is in Indonesian
+    const instruction = "Jawablah semua pertanyaan dalam bahasa Indonesia.";
+    const fullContent = `${instruction}\n\n${content}`;
+
     // Make the chat completion request
     const reply = await groq.chat.completions.create({
       messages: [
         {
           role: "user",
-          content,
+          content: fullContent,
         },
       ],
       model: "llama3-8b-8192",
