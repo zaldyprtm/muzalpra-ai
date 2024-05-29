@@ -4,6 +4,7 @@ import { requestToGroqAI } from "./utils/groq";
 import { Light as SyntexHighlight } from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import Navbar from "./layouts/Navbar";
+import Footer from "./layouts/Footer";
 
 function App() {
   const [data, setData] = useState("");
@@ -39,12 +40,13 @@ function App() {
         <div className="max-w-xl rounded-lg w-full mx-auto">
           {data ? (
 
-            <SyntexHighlight language="swift" style={darcula} wrapLongLines={true}>
+            <SyntexHighlight language="id" style={darcula} wrapLongLines={true}>
             {data}
           </SyntexHighlight>
           ) : null }
         </div>
       </main>
+      <Footer />
     </>
   );
 }
