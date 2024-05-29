@@ -16,14 +16,14 @@ function App() {
   return (
     <>
     <Navbar />
-      <main className="flex flex-col min-h-[80vh] justify-center items-center max-w-xl w-full mx-auto rounded-md">
-        <h1 className="text-4xl font-bold text-indigo-500">MUZALPRA|AI</h1>
+      <main className="flex flex-col min-h-[80vh] justify-center items-center max-w-xl w-full mx-auto rounded-md mt-20">
+        <h1 className="text-4xl font-bold text-indigo-500 uppercase">MUZALPRA | AI</h1>
 
         {/* form */}
         <form className="flex flex-col gap-4 py-4 w-full">
           <input
             type="text"
-            placeholder="ketik permintaan disini..."
+            placeholder="ketik permintaan kamu disini..."
             id="content"
             name="content"
             className="py-2 px-4 text-md rounded-md w-56 mx-auto"
@@ -37,7 +37,7 @@ function App() {
           </button>
         </form>
         {/* kotak untuk menampilkan hasil pencarian atau permintaan user */}
-        <div className="max-w-xl rounded-lg w-full mx-auto">
+        <div className="max-w-xl rounded-xl md:w-full mx-auto rounded-e-lg w-[300px]">
           {data ? (
 
             <SyntexHighlight language="id" style={darcula} wrapLongLines={true}>
