@@ -64,7 +64,7 @@ function App() {
         </Animated>
 
         {!isLoggedIn ? (
-          <Animated animationIn="bounceInLeft" animationInDuration={800}>
+          <Animated animationIn="bounceInLeft">
 
           <div className="flex flex-col gap-4 py-4 w-full">
       
