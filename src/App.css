@@ -24,3 +24,9 @@
   body {
     background-color: rgb(18, 17, 24);
   }
+  .neon-text {
+    color: #4f46e5; /* Indigo color */
+    text-shadow: 0 0 5px #4f46e5, 0 0 10px #4f46e5, 0 0 20px #4f46e5,
+                 0 0 40px #0a0b84, 0 0 80px #0a0b84, 0 0 90px #0a0b84,
+                 0 0 100px #0a0b84, 0 0 150px #0a0b84;
+  }

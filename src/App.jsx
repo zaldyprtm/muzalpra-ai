@@ -60,7 +60,7 @@ function App() {
       <main className="flex flex-col min-h-[80vh] justify-center items-center max-w-xl w-full mx-auto rounded-md mt-20">
         <Animated animationIn="bounceInRight">
 
-        <h1 className="text-4xl font-bold text-indigo-500 uppercase">MUZALPRA | AI</h1>
+        <h1 className="neon-text text-4xl font-bold text-indigo-500 uppercase">MUZALPRA | AI</h1>
         </Animated>
 
         {!isLoggedIn ? (
@@ -111,7 +111,7 @@ function App() {
             <form className="flex flex-col gap-4 py-4 w-full" onSubmit={(e) => e.preventDefault()}>
               <input
                 type="text"
-                placeholder="ketik permintaan kamu disini..."
+                placeholder="ketik permintaan kamu 😁"
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
                 className="py-2 px-4 text-md rounded-md w-56 md:w-full mx-auto"

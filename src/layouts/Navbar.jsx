@@ -73,26 +73,27 @@ const Navbar = ({
       {/* Mobile Menu */}
       {isMenuOpen && (
         <Animated animationIn="slideInRight" animationInDuration={500}>
-
-        <div className="md:hidden bg-transparent w-1/2 left-40 mt-4  shadow-xl rounded-lg relative text-white ">
-          <ul className="flex flex-col items-center py-4">
-            {isLoggedIn && (
-              <>
-                <li className="mb-2">Welcome, {username}</li>
-                <li>
-                  <button
-                    type="button"
-                    onClick={handleLogout}
-                    className="bg-red-500 text-white py-2 px-4 font-semibold rounded-lg"
+          <div className="md:hidden bg-transparent w-1/2 left-40 mt-4 shadow-xl rounded-lg relative text-white">
+            <ul className="flex flex-col items-center py-4">
+              {isLoggedIn ? (
+                <>
+                  <li className="mb-2">Welcome, {username}</li>
+                  <li>
+                    <button
+                      type="button"
+                      onClick={handleLogout}
+                      className="bg-red-500 text-white py-2 px-4 font-semibold rounded-lg"
                     >
-                    Logout
-                  </button>
-                </li>
-              </>
-            )}
-          </ul>
-        </div>
-            </Animated>
+                      Logout
+                    </button>
+                  </li>
+                </>
+              ) : (
+                <span className="text-white font-semibold shadow-md">Login First</span>
+              )}
+            </ul>
+          </div>
+        </Animated>
       )}
     </>
   );
