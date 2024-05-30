@@ -77,12 +77,12 @@ const Navbar = ({
             <ul className="flex flex-col items-center py-4">
               {isLoggedIn ? (
                 <>
-                  <li className="mb-2">Welcome, {username}</li>
+                  <li className="mb-2">Haii😎, {username}</li>
                   <li>
                     <button
                       type="button"
                       onClick={handleLogout}
-                      className="bg-red-500 text-white py-2 px-4 font-semibold rounded-lg"
+                      className="bg-red-500 text-white py-2 px-4 font-semibold hover:opacity-50 rounded-lg"
                     >
                       Logout
                     </button>
