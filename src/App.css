@@ -21,3 +21,6 @@
     to { opacity: 1; }
   }
   
+  body {
+    background-color: rgb(18, 17, 24);
+  }
