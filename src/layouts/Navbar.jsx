@@ -52,10 +52,10 @@ const Navbar = ({
             </svg>
           </button>
         </div>
-        <div className="hidden md:flex items-center bg-transparent shadow-xl">
+        <div className="hidden md:flex items-center bg-transparent shadow-xl sticky top-0 z-10">
           {isLoggedIn && (
             <>
-              <div className="w-1/2 bg-transparent shadow-xl">
+              <div className="w-1/2 bg-transparent shadow-xl sticky z-10 top-0">
                 <span className="mr-4">Welcome, {username}</span>
                 <button
                   type="button"
