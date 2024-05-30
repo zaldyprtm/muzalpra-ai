@@ -10,12 +10,20 @@ function App() {
   const [data, setData] = useState("");
   const [content, setContent] = useState("");
   const [submittedContent, setSubmittedContent] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [showResult, setShowResult] = useState(false); // State untuk mengelola animasi hasil
 
   const handleSubmit = async () => {
+    setLoading(true);
+    setShowResult(false); // Sembunyikan hasil sebelumnya saat loading
     const ai = await requestToGroqAI(content);
-    setData(ai);
-    setSubmittedContent(content);
-    setContent(""); // Clear the input field
+    setTimeout(() => {
+      setData(ai);
+      setSubmittedContent(content);
+      setLoading(false);
+      setContent("");
+      setShowResult(true); // Tampilkan hasil dengan animasi
+    }, 2000);
   };
 
   return (
@@ -36,9 +44,14 @@ function App() {
           <button
             type="button"
             onClick={handleSubmit}
-            className="bg-sky-500 text-white py-2 px-4 font-semibold rounded-lg mx-auto"
+            className="bg-sky-500 text-white py-2 px-4 font-semibold rounded-lg mx-auto flex justify-center items-center"
+            disabled={loading}
           >
-            Submit
+            {loading ? (
+              <div className="loader"></div>
+            ) : (
+              "Submit"
+            )}
           </button>
         </form>
 
@@ -50,7 +63,7 @@ function App() {
         )}
 
         {/* kotak untuk menampilkan hasil pencarian atau permintaan user */}
-        <div className="max-w-xl rounded-xl md:w-full mx-auto rounded-e-lg w-[300px] mt-4">
+        <div className={`max-w-xl rounded-xl md:w-full mx-auto rounded-e-lg w-[300px] mt-4 ${showResult ? 'fade-in' : ''}`}>
           {data && (
             <SyntaxHighlight language="id" style={darcula} wrapLongLines={true}>
               {data}
