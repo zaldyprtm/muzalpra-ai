@@ -61,21 +61,23 @@ function App() {
         </h1>
 
         {!isLoggedIn ? (
-          <div className="flex flex-col gap-4 py-4 w-full">
-            <form>
+          <div className="flex flex-col gap-4 py-4 w-full mx-auto justify-center items-center">
+            <form className="mx-auto flex justify-center items-center flex-col gap-3">
               <input
                 type="text"
                 placeholder="Username"
                 value={username}
+                autoComplete="usern"
                 onChange={(e) => setUsername(e.target.value)}
-                className="py-2 px-4 text-md rounded-md w-56 md:w-full mx-auto"
+                className="py-2 px-4 text-md rounded-md w-56 md:w-full mx-auto outline-sky-400 border border-slate-500"
               />
               <input
                 type="password"
                 placeholder="Password"
                 value={password}
+                autoComplete="current-password"
                 onChange={(e) => setPassword(e.target.value)}
-                className="py-2 px-4 text-md rounded-md w-56 md:w-full mx-auto"
+                className="py-2 px-4 text-md rounded-md w-56 md:w-full mx-auto outline-sky-400 border border-slate-500"
               />
               {isRegister ? (
                 <button
