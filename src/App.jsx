@@ -64,7 +64,10 @@ function App() {
         </Animated>
 
         {!isLoggedIn ? (
+          <Animated animationIn="bounceInLeft" animationInDuration={800}>
+
           <div className="flex flex-col gap-4 py-4 w-full">
+      
             <input
               type="text"
               placeholder="Username"
@@ -81,17 +84,17 @@ function App() {
             />
             {isRegister ? (
               <button
-                type="button"
-                onClick={handleRegister}
-                className="bg-sky-500 text-white py-2 px-4 font-semibold rounded-lg mx-auto flex justify-center items-center"
+              type="button"
+              onClick={handleRegister}
+              className="bun bg-sky-500 text-white py-2 hover:opacity-50 transtion-all ease-in-out duration-300 px-4 font-semibold rounded-lg mx-auto flex justify-center items-center"
               >
                 Register
               </button>
             ) : (
               <button
-                type="button"
-                onClick={handleLogin}
-                className="bg-sky-500 text-white py-2 px-4 font-semibold rounded-lg mx-auto flex justify-center items-center"
+              type="button"
+              onClick={handleLogin}
+              className="bg-sky-500 shadow-xl hover:opacity-50 transtion-all ease-in-out duration-300 text-white py-2 px-4 font-semibold rounded-lg mx-auto flex justify-center items-center"
               >
                 Login
               </button>
@@ -100,10 +103,11 @@ function App() {
               type="button"
               onClick={() => setIsRegister(!isRegister)}
               className="text-sky-500 mx-auto"
-            >
-              {isRegister ? "Already have an account? Login" : "Don't have an account? Register"}
+              >
+              {isRegister ?  "Already have an account? Login" : "Don't have an account? Register"}
             </button>
           </div>
+              </Animated>
         ) : (
           <>
           <Animated animationIn="bounceIn">

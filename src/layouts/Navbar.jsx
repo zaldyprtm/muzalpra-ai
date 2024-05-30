@@ -19,7 +19,7 @@ const Navbar = ({
   return (
     <>
       <div className="navbar bg-base-300 sticky top-0 z-10 flex justify-between items-center px-4">
-        <button className="btn btn-ghost text-xl uppercase font-bold">
+        <button className="btn bun btn-ghost text-xl uppercase font-bold shadow-md">
           Muzalpra AI
         </button>
         <div className="flex items-center md:hidden">
@@ -60,7 +60,7 @@ const Navbar = ({
                 <button
                   type="button"
                   onClick={handleLogout}
-                  className="bg-red-500 text-white py-2 px-4 font-semibold rounded-lg"
+                  className="bg-red-500 text-white py-2 px-4 font-semibold rounded-lg hover:opacity-50"
                 >
                   Logout
                 </button>
