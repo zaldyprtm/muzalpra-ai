@@ -5,6 +5,7 @@ import { Light as SyntaxHighlight } from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import Navbar from "./layouts/Navbar";
 import Footer from "./layouts/Footer";
+import { Animated } from "react-animated-css";
 
 function App() {
   const [data, setData] = useState("");
@@ -54,81 +55,81 @@ function App() {
         setIsLoggedIn={setIsLoggedIn}
         setUsername={setUsername}
         setPassword={setPassword}
+        username={username}
       />
       <main className="flex flex-col min-h-[80vh] justify-center items-center max-w-xl w-full mx-auto rounded-md mt-20">
-        <h1 className="text-4xl font-bold text-indigo-500 uppercase">
-          MUZALPRA | AI
-        </h1>
+        <Animated animationIn="bounceInRight">
+
+        <h1 className="text-4xl font-bold text-indigo-500 uppercase">MUZALPRA | AI</h1>
+        </Animated>
 
         {!isLoggedIn ? (
-          <div className="flex flex-col gap-4 py-4 w-full mx-auto justify-center items-center">
-            <form className="mx-auto flex justify-center items-center flex-col gap-3">
-              <input
-                type="text"
-                placeholder="Username"
-                value={username}
-                autoComplete="usern"
-                onChange={(e) => setUsername(e.target.value)}
-                className="py-2 px-4 text-md rounded-md w-56 md:w-full mx-auto outline-sky-400 border border-slate-500"
-              />
-              <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                autoComplete="current-password"
-                onChange={(e) => setPassword(e.target.value)}
-                className="py-2 px-4 text-md rounded-md w-56 md:w-full mx-auto outline-sky-400 border border-slate-500"
-              />
-              {isRegister ? (
-                <button
-                  type="button"
-                  onClick={handleRegister}
-                  className="bg-sky-500 text-white py-2 px-4 font-semibold rounded-lg mx-auto flex justify-center items-center"
-                >
-                  Register
-                </button>
-              ) : (
-                <button
-                  type="button"
-                  onClick={handleLogin}
-                  className="bg-sky-500 text-white py-2 px-4 font-semibold rounded-lg mx-auto flex justify-center items-center"
-                >
-                  Login
-                </button>
-              )}
+          <div className="flex flex-col gap-4 py-4 w-full">
+            <input
+              type="text"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              className="py-2 px-4 text-md rounded-md w-56 md:w-full mx-auto"
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="py-2 px-4 text-md rounded-md w-56 md:w-full mx-auto"
+            />
+            {isRegister ? (
               <button
                 type="button"
-                onClick={() => setIsRegister(!isRegister)}
-                className="text-sky-500 mx-auto"
+                onClick={handleRegister}
+                className="bg-sky-500 text-white py-2 px-4 font-semibold rounded-lg mx-auto flex justify-center items-center"
               >
-                {isRegister
-                  ? "Already have an account? Login"
-                  : "Don't have an account? Register"}
+                Register
               </button>
-            </form>
+            ) : (
+              <button
+                type="button"
+                onClick={handleLogin}
+                className="bg-sky-500 text-white py-2 px-4 font-semibold rounded-lg mx-auto flex justify-center items-center"
+              >
+                Login
+              </button>
+            )}
+            <button
+              type="button"
+              onClick={() => setIsRegister(!isRegister)}
+              className="text-sky-500 mx-auto"
+            >
+              {isRegister ? "Already have an account? Login" : "Don't have an account? Register"}
+            </button>
           </div>
         ) : (
           <>
-            <form
-              className="flex flex-col gap-4 py-4 w-full"
-              onSubmit={(e) => e.preventDefault()}
-            >
+          <Animated animationIn="bounceIn">
+
+            <form className="flex flex-col gap-4 py-4 w-full" onSubmit={(e) => e.preventDefault()}>
               <input
                 type="text"
                 placeholder="ketik permintaan kamu disini..."
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
                 className="py-2 px-4 text-md rounded-md w-56 md:w-full mx-auto"
-              />
+                />
               <button
                 type="button"
                 onClick={handleSubmit}
                 className="bg-sky-500 text-white py-2 px-4 font-semibold rounded-lg mx-auto flex justify-center items-center"
                 disabled={loading}
-              >
-                {loading ? <div className="loader"></div> : "Submit"}
+                >
+                {loading ? (
+                  <div className="loader"></div>
+                ) : (
+                  "Submit"
+                )}
               </button>
             </form>
+                </Animated>
 
             {submittedContent && (
               <div className="py-2 px-4 text-md rounded-md w-56 md:w-full mx-auto mt-4 bg-sky-300 text-black font-semibold">
@@ -136,17 +137,9 @@ function App() {
               </div>
             )}
 
-            <div
-              className={`max-w-xl rounded-xl md:w-full mx-auto rounded-e-lg w-[300px] mt-4 ${
-                showResult ? "fade-in" : ""
-              }`}
-            >
+            <div className={`max-w-xl rounded-xl md:w-full mx-auto  w-[300px] mt-4 ${showResult ? 'fade-in' : ''}`}>
               {data && (
-                <SyntaxHighlight
-                  language="id"
-                  style={darcula}
-                  wrapLongLines={true}
-                >
+                <SyntaxHighlight language="id" style={darcula} wrapLongLines={true} className="rounded-lg text-wrap shadow-xl">
                   {data}
                 </SyntaxHighlight>
               )}

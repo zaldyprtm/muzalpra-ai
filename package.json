@@ -10,9 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-spring/web": "^9.7.3",
     "dotenv": "^16.4.5",
     "groq-sdk": "^0.4.0",
     "react": "^18.2.0",
+    "react-animated-css": "^1.2.1",
     "react-dom": "^18.2.0",
     "react-syntax-highlighter": "^15.5.0"
   },
