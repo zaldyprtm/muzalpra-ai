@@ -18,7 +18,7 @@ const Navbar = ({
 
   return (
     <>
-      <div className="navbar bg-base-300 sticky top-0 z-10 flex justify-between items-center px-4">
+      <div className="navbar bg-base-300 shadow-xl sticky top-0 z-10 flex justify-between items-center px-4">
         <button className="btn bun btn-ghost text-xl uppercase font-bold shadow-md">
           Muzalpra AI
         </button>

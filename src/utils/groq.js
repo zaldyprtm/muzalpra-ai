@@ -25,7 +25,7 @@ export const requestToGroqAI = async (content) => {
           content: fullContent,
         },
       ],
-      model: "Llama3-8b-8192",
+      model: "Llama3-70b-8192",
     });
 
     // Return the content of the first choice
