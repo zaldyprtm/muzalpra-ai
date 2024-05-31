@@ -30,6 +30,7 @@ export const requestToGroqAI = async (content) => {
 
     // Return the content of the first choice
     return reply.choices[0].message.content;
+    reply.usage.total_tokens;
   } catch (error) {
     console.error("Error making request to Groq AI:", error);
     throw new Error("Failed to get a response from Groq AI");
