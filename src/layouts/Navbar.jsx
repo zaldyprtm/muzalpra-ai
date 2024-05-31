@@ -73,7 +73,7 @@ const Navbar = ({
       {/* Mobile Menu */}
       {isMenuOpen && (
         <Animated animationIn="slideInRight" animationInDuration={500}>
-          <div className="md:hidden bg-transparent w-1/2 left-40 mt-4 shadow-xl rounded-lg relative text-white">
+          <div className="md:hidden bg-base-100 w-1/2 left-40 mt-4 shadow-xl rounded-lg relative text-white">
             <ul className="flex flex-col items-center py-4">
               {isLoggedIn ? (
                 <>
